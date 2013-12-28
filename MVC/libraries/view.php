@@ -2,11 +2,10 @@
 
 class View {
 	function __construct() {
-		echo "This is view. <br />";
+		// Insert construct f(x).
 	}
 
 	public function render($name, $noinclude = false) {
-
 		if ($noinclude == true) {
 			require 'views/' . $name . '.php';
 		}
