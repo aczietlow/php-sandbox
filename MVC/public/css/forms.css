@@ -1,0 +1,27 @@
+#form-install-database input, label, button, textarea{
+    font-size: 14px;
+    font-weight: strong;
+    line-height: 20px;
+    width: 150px;
+    display: block;
+
+    border-radius: 3px 3px 3px 3px;
+    color: #555555;
+    /*display: inline-block;*/
+}
+
+#form-install-database input, textarea, select {
+    height: 30px;
+}
+
+#form-install-database label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#form-install-database .submit {
+    margin-top: 20px;
+}
+.form-input {
+
+}
