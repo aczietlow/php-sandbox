@@ -2,7 +2,7 @@
 <p> Welcome to the installation of this test MVC. We'll need to set up a few components to get started.</p>
 <h3>Database</h3>
 <div id="form-install-database">
-  <form action="install/database" name="install" /><br />
+  <form action="install/database" name="install" method="post"/><br />
     <div id="form-install-database-user" class="form-input">
       <label>User</label><input type="text" name="user" />
     </div>

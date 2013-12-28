@@ -17,7 +17,7 @@ class Bootstrap {
 			require $file;
 		}
 		else {
-			$this->error();
+			$this->_error();
 		}
 
 		$controller = new $url[0];
@@ -28,7 +28,7 @@ class Bootstrap {
 				$controller->$url[1]($url[2]);
 			}
 			else {
-				$this->error();
+				$this->_error();
 			}
 		}
 		else {
@@ -37,19 +37,19 @@ class Bootstrap {
 					$controller->{$url[1]}();
 				}
 				else {
-					$this->error();
+					$this->_error();
 				}
 			}
 			else {
 				$controller->index();
 			}
 		}
-
-		function error() {
-			require 'controllers/error.php';
-			$controller = new Errors();
-			$controller->index();
-			return false;
-		}
 	}
+
+  function _error() {
+    require 'controllers/error.php';
+    $controller = new Errors();
+    $controller->index();
+    return false;
+  }
 }

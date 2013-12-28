@@ -1,11 +1,15 @@
 <?php
 class Install extends Controller {
-  function __construct() {
+  public function __construct() {
     parent::__construct();
   }
 
-  function index() {
+  public function index() {
     $this->view->msg = "Welcome!";
     $this->view->render('install/index');
+  }
+
+  public function install_database() {
+    $this->model->install_database();
   }
 }
