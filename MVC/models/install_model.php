@@ -1,6 +1,10 @@
 <?php
 
+/**
+ * Class Install_Model
+ */
 class Install_Model extends Model {
+
   /**
    * Construct Method for install model. We don't call the parent construct because we don't have
    * a database to connect with just yet.
@@ -11,9 +15,14 @@ class Install_Model extends Model {
 
   /**
    * Creates a new database using the credentials the user provided.
+   * @TODO Use credentials to create new database schema.
    */
-  public function install_database() {
-    print_r($_POST);
+  public function database() {
+    try {
+      $dbh = new PDO(DB_TYPE . ':host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
+    } catch (PDOException $e) {
+      echo $e->getMessage();
+    }
   }
 
   /**

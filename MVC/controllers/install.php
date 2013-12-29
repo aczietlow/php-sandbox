@@ -9,7 +9,7 @@ class Install extends Controller {
     $this->view->render('install/index');
   }
 
-  public function install_database() {
-    $this->model->install_database();
+  public function database() {
+    $this->model->database();
   }
 }
