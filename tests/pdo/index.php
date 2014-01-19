@@ -11,3 +11,9 @@ try {
   print($e->getMessage());
   die();
 }
+
+$query = $dh->query('SELECT * FROM guest_book');
+
+while($r = $query->fetch()) {
+  print $r['message'] . "<br>";
+}
