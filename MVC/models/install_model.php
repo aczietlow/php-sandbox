@@ -19,11 +19,11 @@ class Install_Model extends Model {
    */
   public function database() {
     try {
-      $dbh = new PDO(DB_TYPE . ':host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
+      $dbh = new Database(DB_TYPE . ':host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
     } catch (PDOException $e) {
       echo $e->getMessage();
     }
-
+    echo "success";
   }
 
   /**
