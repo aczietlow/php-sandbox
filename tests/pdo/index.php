@@ -14,28 +14,43 @@ try {
 
 
 
-// By default fetch will return a numerative and associative array.
+
+
+/** Different query modes. */
+//// By default fetch will return a numerative and associative array.
+//r = $query->fetch(PDO::FETCH_BOTH);
+//
+//// Will return result in object.
 //$r = $query->fetch(PDO::FETCH_BOTH);
 
-// Will return result in object.
-//$r = $query->fetch(PDO::FETCH_BOTH);
 
-class GuestBookEntry {
+/** Fetching query into a class. */
+//class GuestBookEntry {
+//
+//  public $id, $name, $message, $date,
+//         $entry;
+//
+//  public function __construct() {
+//    $this->entry = "$this->name posted: $this->message";
+//  }
+//}
+//
+//$query = $dh->query('SELECT * FROM guest_book');
+//$query->setFetchMode(PDO::FETCH_CLASS, 'GuestBookEntry');
+//
+//// Iterate through rows of result.
+//while($r = $query->fetch()) {
+//  echo "<pre>" , print_r($r) , "</pre>";
+//}
 
-  public $id, $name, $message, $date,
-         $entry;
 
-  public function __construct() {
-    $this->entry = "$this->name posted: $this->message";
-  }
-}
-
-$query = $dh->query('SELECT * FROM guest_book');
-$query->setFetchMode(PDO::FETCH_CLASS, 'GuestBookEntry');
-
-// Iterate through rows of result.
-while($r = $query->fetch()) {
-  echo "<pre>" , print_r($r) , "</pre>";
-}
-
-
+/** Prepared statements. */
+//$name = 'Jim';
+//$message = 'test';
+//
+//$sql = "INSERT INTO guest_book (name, message, date) VALUES (:name, :message, NOW())";
+//$query = $dh->prepare($sql);
+//$query->execute(array(
+//  ':name' => $name,
+//  ':message' => $message
+//));
