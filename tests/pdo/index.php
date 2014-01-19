@@ -54,3 +54,18 @@ try {
 //  ':name' => $name,
 //  ':message' => $message
 //));
+//
+//// Grab the id from the last inserted record.
+//echo $dh->lastInsertId();
+
+/** Count */
+$query =  $dh->query('SELECT * FROM guest_book');
+
+if ($query->rowCount()) {
+  while($r = $query->fetch()) {
+    echo $r['message'], '<br>';
+  }
+}
+else {
+  echo 'No results';
+}
