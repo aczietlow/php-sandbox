@@ -9,7 +9,7 @@ class Database extends PDO {
     try {
       parent::__construct($database['driver'] . ':host=' . $database['host'] . ';dbname=' . $database['name'], $database['user'], $database['password']);
     } catch (PDOException $e) {
-      $this->_checkCredentials($database);
+      Database::_checkCredentials($database);
       echo $e->getMessage();
       die();
     }
@@ -22,18 +22,18 @@ class Database extends PDO {
    */
   protected function _checkCredentials($databaseArray) {
     switch ($databaseArray) {
-      case !empty($databaseArray['driver']):
-        $drivers = $this->getAvailableDrivers();
-        if (!in_array($databaseArray['driver'], $drivers)) {
-          echo 'Please provide a correct database driver', '<br>';
-          echo 'Your available drivers are', '<pre>';
-          echo '<pre>', $drivers, '</pre>';
-          die();
-        }
-        break;
       case empty($databaseArray['driver']):
         echo 'No database driver was provided in the settings.php file';
         die();
+        break;
+      case !empty($databaseArray['driver']):
+        $drivers = Database::getAvailableDrivers();
+        if (!in_array($databaseArray['driver'], $drivers)) {
+          echo 'Please provide a correct database driver', '<br>';
+          echo 'Your available drivers are', '<pre>';
+          echo '<pre>', print_r($drivers), '</pre>';
+          die();
+        }
         break;
       case empty($databaseArray['host']):
         echo 'No database host was provided in the settings.php file';
