@@ -5,11 +5,11 @@ require 'libraries/controller.php';
 require 'libraries/model.php';
 require 'libraries/view.php';
 
-//Libraries
+// Settings
+require 'config/settings.php';
+
+// Libraries
 require 'libraries/database.php';
 require 'libraries/session.php';
-
-require 'config/database.php';
-require 'config/paths.php';
 
 $app = new Bootstrap();
