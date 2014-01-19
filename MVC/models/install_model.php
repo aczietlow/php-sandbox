@@ -23,6 +23,7 @@ class Install_Model extends Model {
     } catch (PDOException $e) {
       echo $e->getMessage();
     }
+
   }
 
   /**
