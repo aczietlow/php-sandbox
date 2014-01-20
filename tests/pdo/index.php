@@ -1,6 +1,6 @@
 <?php
-//list all available drivers.
-PDO::getAvailableDrivers();
+// Install Schame class.
+require_once('install.php');
 
 try {
   // Create a new database handler and connect to the database.
@@ -12,9 +12,9 @@ try {
   die();
 }
 
+$db = new InstallSchema($dh);
 
-
-
+$db->dummyTable('test');
 
 /** Different query modes. */
 //// By default fetch will return a numerative and associative array.
@@ -59,13 +59,13 @@ try {
 //echo $dh->lastInsertId();
 
 /** Count */
-$query =  $dh->query('SELECT * FROM guest_book');
-
-if ($query->rowCount()) {
-  while($r = $query->fetch()) {
-    echo $r['message'], '<br>';
-  }
-}
-else {
-  echo 'No results';
-}
+//$query =  $dh->query('SELECT * FROM guest_book');
+//
+//if ($query->rowCount()) {
+//  while($r = $query->fetch()) {
+//    echo $r['message'], '<br>';
+//  }
+//}
+//else {
+//  echo 'No results';
+//}

@@ -1,11 +1,11 @@
 <?php
-define('URL', 'http://sandbox/php-sandbox/MVC/');
 
+// example database array
 $database = array(
   'driver' => 'mysql',
   'host' => '127.0.0.1',
-  'name' => 'sb_mvc',
-  'user' => 'root',
-  'password' => 'root',
+  'name' => 'name',
+  'user' => 'user',
+  'password' => 'password',
   'port' => '',
 );
