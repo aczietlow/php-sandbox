@@ -8,7 +8,7 @@ echo "<pre>";
 $input_array = array('FirsT' => 1, 'SeConD' => 2);
 print_r(array_change_key_case($input_array, CASE_UPPER));
 
-/** output
+/**
 Array
 (
     [FIRST] => 1
@@ -25,7 +25,7 @@ $input_array = array('a', 'b', 'c', 'd', 'e');
 print_r(array_chunk($input_array,2));
 print_r(array_chunk($input_array,2, TRUE));
 
-/** Output
+/**
 Array
 (
   [0] => Array
@@ -126,7 +126,25 @@ if (function_exists('array_column')) {
 
 }
 
+/**
+ * array_combine(array $keys, array $values)
+ * Returns an array by using the values from $keys as the keys and the values from $values as the corresponding values.
+ */
+// Example 1
+$a = array('green', 'red', 'yellow');
+$b = array('avocado', 'apple', 'banana');
+$c = array_combine($a, $b);
 
+print_r($c);
+
+/**
+Array
+(
+  [green]  => avocado
+  [red]    => apple
+  [yellow] => banana
+)
+ */
 
 
 echo "</pre>";
