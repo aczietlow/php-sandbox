@@ -8,7 +8,7 @@ echo "<pre>";
 $input_array = array('FirsT' => 1, 'SeConD' => 2);
 print_r(array_change_key_case($input_array, CASE_UPPER));
 
-/**
+/*
 Array
 (
     [FIRST] => 1
@@ -25,7 +25,7 @@ $input_array = array('a', 'b', 'c', 'd', 'e');
 print_r(array_chunk($input_array,2));
 print_r(array_chunk($input_array,2, TRUE));
 
-/**
+/*
 Array
 (
   [0] => Array
@@ -101,7 +101,7 @@ if (function_exists('array_column')) {
   $first_names = array_column($records, 'firstname');
   print_r($first_names);
 
-  /**
+  /*
   Array
   (
     [0] => John
@@ -114,7 +114,7 @@ if (function_exists('array_column')) {
   // Example 2 using records from Example #1.
   $last_name = array_column($last_name, 'last_name', 'id');
 
-  /**
+  /*
   Array
   (
     [2135] => Doe
@@ -137,7 +137,7 @@ $c = array_combine($a, $b);
 
 print_r($c);
 
-/**
+/*
 Array
 (
   [green]  => avocado
@@ -145,6 +145,26 @@ Array
   [yellow] => banana
 )
  */
+
+
+/**
+ * array_count_values(array $array)
+ * Returns an associative array of values from $array as keys and their count as their value.
+ */
+
+// Example 1
+$array = array(1, 'hello', 1, 'world', 'hello');
+print_r(array_count_values($array));
+
+/*
+Array
+(
+    [1] => 2
+    [hello] => 2
+    [world] => 1
+)
+ */
+
 
 
 echo "</pre>";
