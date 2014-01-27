@@ -165,6 +165,39 @@ Array
 )
  */
 
+/**
+ * array_diff_assoc(array $array1, array $array2[, array $...] )
+ * Compares array1 against array2 and returns the difference. Array keys are also used in comparison.
+ */
+// Example 1
+$array1 = array('a'=> 'green' , 'b' => 'brown', 'c' => 'blue', 'red');
+$array2 = array('a' => 'green', 'yellow', 'red');
+$result = array_diff_assoc($array1,$array2);
+print_r($result);
+
+/*
+Array
+(
+    [b] => brown
+    [c] => blue
+    [0] => red
+)
+ */
+
+// Example 2
+$array1 = array(0, 1, 2);
+$array2 = array('00', '01', '2');
+$result = array_diff_assoc($array1, $array2);
+
+/*
+Array
+(
+    [0] => 0
+    [1] => 1
+)
+ */
+
+
 
 
 echo "</pre>";
