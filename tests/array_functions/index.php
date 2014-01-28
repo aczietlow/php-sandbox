@@ -197,7 +197,30 @@ Array
 )
  */
 
+/**
+ * array_slice(array $array, int $offset [, int $length = NULL [, bool $perserve_keys = false]])
+ * Returns the sequence of elements from $array as specified by $offset and $length
+ */
+// Example 1
+$array = array('a', 'b', 'c', 'd', 'e');
 
+$output = array_slice($array, 2);           // Returns 'c', 'd', and 'e'.
+$output = array_slice($array, -2, 1);       // Returns 'd'.
+$output = array_slice($array, 0, 3); // Returns 'a', 'b', 'c'.
 
+print_r(array_slice($array, 2, -1));
+print_r(array_slice($array, 2, -1, TRUE));
 
+/*
+Array
+(
+    [0] => c
+    [1] => d
+)
+Array
+(
+    [2] => c
+    [3] => d
+)
+ */
 echo "</pre>";
