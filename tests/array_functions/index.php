@@ -112,7 +112,7 @@ if (function_exists('array_column')) {
    */
 
   // Example 2 using records from Example #1.
-  $last_name = array_column($last_name, 'last_name', 'id');
+  $last_name = array_column($records, 'last_name', 'id');
 
   /*
   Array
@@ -196,6 +196,52 @@ Array
     [1] => 1
 )
  */
+
+/**
+ * array_diff_key(array $array1, array $array2, [, array $...])
+ * Compares the keys from $array1 against the keys from $array2 and returns the difference.
+ */
+// Example 1
+$array1 = array('blue' => 1, 'red' => 2, 'green' => 3, 'purple' => 4);
+$array2 = array('green' => 5, 'blue' => 6, 'yellow' => 7, 'cyan' => 8);
+
+var_dump(array_diff_key($array1, $array2));
+
+/*
+array(2) {
+  ["red"]=>
+  int(2)
+  ["purple"]=>
+  int(4)
+}
+ */
+
+/**
+ * array_diff_uassoc()
+ */
+
+/**
+ * array_diff_ukey()
+ */
+
+/**
+ * array_diff(array $array1, array $array2, [, array $...])
+ * Compares $array1 against one or more arrays and returns the values in $array1 that are not present in other arrays.
+ */
+// Example 1
+$array1 = array("a" => "green", "red", "blue", "red");
+$array2 = array("b" => "green", "yellow", "red");
+$result = array_diff($array1, $array2);
+
+print_r($result);
+
+/*
+Array
+(
+    [1] => blue
+)
+ */
+
 
 /**
  * array_slice(array $array, int $offset [, int $length = NULL [, bool $perserve_keys = false]])
