@@ -1,0 +1,16 @@
+body {
+    background: #ffffff;
+    margin: 0;
+}
+
+div {
+    background: #cccccc;
+    width: 960px;
+    height: 400px;
+    padding: 15px;
+    margin: auto;
+}
+
+.shadow1 {
+    box-shadow: 0px 20px 10px -10px rgba(120, 120, 120, 0.5);
+}
