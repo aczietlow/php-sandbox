@@ -1,0 +1,17 @@
+body {
+    background: #cccccc;
+    margin: 0;
+}
+
+div {
+    background: #ffffff;
+    width: 600px;
+    height: 200px;
+    padding: 15px;
+    margin: 15px;
+    float: left;
+}
+
+.shadow1 {
+    box-shadow: 5px 5px rgba(150, 150, 150, 0.5);
+}
