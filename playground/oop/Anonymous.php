@@ -1,6 +1,7 @@
 <?php
-
 echo "<pre>";
+
+// Anonymous functions in procedural php.
 
 // Using anonymous functions as a php callback.
 echo preg_replace_callback('~-([a-z])~', function ($match) {
@@ -16,7 +17,9 @@ $greet = function($name)
   printf("Hello %s\r\n", $name);
 };
 
-$greet('World'); // Outputs Hello World.
-$greet('PHP'); // Outputs Hello PHP.
+// Outputs Hello World.
+$greet('World');
+// Outputs Hello PHP.
+$greet('PHP');
 
 echo "</pre>";
