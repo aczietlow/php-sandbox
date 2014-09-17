@@ -35,14 +35,57 @@ $greet('World');
 
 echo "\n\n---------------\n\n";
 
+/*
+ * The nested function will become part of the global namespace, and will throw
+ * a redeclaration error if censorString is called multiple times.
+ */
+
 function censorString($string, $censor) {
-  return preg_replace_callback('/' . $censor . '/', function ($match) {
+  function replace($match) {
     return str_repeat("*", strlen($match[0]));
-  }, $string);
+  }
+  return preg_replace_callback('/' . $censor . '/', 'replace', $string);
 }
 
 echo censorString("hello world", "world");
 echo "\n";
 echo censorString("hello world", "hello");
+
+echo "\n\n---------------\n\n";
+
+/*
+ * Alternatively we can create an anonymous function and assign it to a
+ * variable. Note the semi colon at the end of the declaration.
+ *
+ */
+
+function censorString2($string, $censor) {
+  $func = function ($match) {
+    return str_repeat("*", strlen($match[0]));
+  };
+  return preg_replace_callback('/' . $censor . '/', $func, $string);
+}
+
+echo censorString2("hello world", "world");
+echo "\n";
+echo censorString2("hello world", "hello");
+
+
+echo "\n\n---------------\n\n";
+
+/*
+ * Another, arguably cleaner solution is to place the anonymous function
+ * inline as a parameter.
+ */
+
+function censorString3($string, $censor) {
+  return preg_replace_callback('/' . $censor . '/', function ($match) {
+    return str_repeat("*", strlen($match[0]));
+  }, $string);
+}
+
+echo censorString3("hello world", "world");
+echo "\n";
+echo censorString3("hello world", "hello");
 
 echo "</pre>";
