@@ -105,7 +105,7 @@ echo "\n\n---------------\n\n";
 
 /*
  * Though closures have access to variables from the parent scope,
- * they are not called by reference and as such chnaging the value
+ * they are not called by reference and as such changing the value
  * of a variable in which a closure has been "closed" around will
  * not effect the variable outside the closure.
  */
