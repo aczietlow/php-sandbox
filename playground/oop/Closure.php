@@ -101,4 +101,37 @@ echo "\n\n---------------\n\n";
 // Debug information about the closure object.
 echo ReflectionFunction::export($greater_than_100);
 
+echo "\n\n---------------\n\n";
+
+/*
+ * Though closures have access to variables from the parent scope,
+ * they are not called by reference and as such chnaging the value
+ * of a variable in which a closure has been "closed" around will
+ * not effect the variable outside the closure.
+ */
+
+// Set the counter.
+$i = 0;
+// Increase counter within the scope of the function.
+$closure = function () use ($i){
+  $i++;
+};
+// Run the function.
+$closure();
+// The global count hasn't changed.
+// Returns 0.
+echo $i . "\n";
+
+// Reset the count.
+$i = 0;
+// Increase counter within the scope of the function but pass it as a reference.
+$closure = function () use (&$i){
+  $i++;
+};
+// Run the function.
+$closure();
+// The global count has increased.
+// Returns 1.
+echo $i . "\n";
+
 echo "</pre>";
