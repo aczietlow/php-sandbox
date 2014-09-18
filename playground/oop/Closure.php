@@ -93,7 +93,12 @@ $greater_than_400 = createFilter(400);
 
 $not_random_numbers = array(42, 34, 56, 1, 5, 67, 123, 4, 55, 467, 555);
 
-print_r(filter($greater_than_100, $not_random_numbers));
-print_r(filter($greater_than_400, $not_random_numbers));
+print_r(filter2($greater_than_100, $not_random_numbers));
+print_r(filter2($greater_than_400, $not_random_numbers));
+
+echo "\n\n---------------\n\n";
+
+// Debug information about the closure object.
+echo ReflectionFunction::export($greater_than_100);
 
 echo "</pre>";
