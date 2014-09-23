@@ -6,3 +6,4 @@ http://www.phptherightway.com/
 
 h2. Things for later
 * Relfection API
+* traits
