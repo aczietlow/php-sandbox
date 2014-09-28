@@ -49,7 +49,7 @@ function censorString($string, $censor) {
 
 echo censorString("hello world", "world");
 echo "\n";
-echo censorString("hello world", "hello");
+//echo censorString("hello world", "hello");
 
 echo "\n\n---------------\n\n";
 
@@ -89,3 +89,23 @@ echo "\n";
 echo censorString3("hello world", "hello");
 
 echo "</pre>";
+
+$output = '
+<h2>php functions that use callbacks </h2>
+<ul>
+    <li>bool array_walk ( array &$array , callable $callback [, mixed $userdata = NULL ] ) ***</li>
+    <li>mixed preg_replace_callback ( mixed $pattern , callable $callback , mixed $subject [, int $limit = -1 [, int &$count ]] ) ***</li>
+    <li>array array_diff_uassoc ( array $array1 , array $array2 [, array $... ], callable $key_compare_func )</li>
+    <li>array array_diff_ukey ( array $array1 , array $array2 [, array $... ], callable $key_compare_func )</li>
+    <li>array array_filter ( array $array [, callable $callback ] )</li>
+    <li>array array_intersect_uassoc ( array $array1 , array $array2 [, array $... ], callable $key_compare_func )</li>
+    <li>array array_intersect_ukey ( array $array1 , array $array2 [, array $... ], callable $key_compare_func )</li>
+    <li>array array_map ( callable $callback , array $array1 [, array $... ] ) ****</li>
+    <li>mixed array_reduce ( array $array , callable $callback [, mixed $initial = NULL ] )</li>
+    <li>array array_udiff_assoc ( array $array1 , array $array2 [, array $... ], callable $value_compare_func )</li>
+    <li></li>
+
+</ul>
+';
+
+print $output;
