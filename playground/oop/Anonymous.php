@@ -103,6 +103,12 @@ $output = '
     <li>array array_map ( callable $callback , array $array1 [, array $... ] ) ****</li>
     <li>mixed array_reduce ( array $array , callable $callback [, mixed $initial = NULL ] )</li>
     <li>array array_udiff_assoc ( array $array1 , array $array2 [, array $... ], callable $value_compare_func )</li>
+    <li>array array_udiff_uassoc ( array $array1 , array $array2 [, array $... ], callable $value_compare_func , callable $key_compare_func )</li>
+    <li>array array_udiff ( array $array1 , array $array2 [, array $... ], callable $value_compare_func )</li>
+    <li>array array_uintersect_assoc ( array $array1 , array $array2 [, array $... ], callable $value_compare_func )</li>
+    <li>array array_uintersect_uassoc ( array $array1 , array $array2 [, array $... ], callable $value_compare_func , callable $key_compare_func )</li>
+    <li>array array_uintersect ( array $array1 , array $array2 [, array $... ], callable $value_compare_func )</li>
+    <li>bool array_walk_recursive ( array &$array , callable $callback [, mixed $userdata = NULL ] )</li>
     <li></li>
 
 </ul>
