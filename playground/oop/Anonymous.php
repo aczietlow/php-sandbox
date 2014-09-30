@@ -16,14 +16,25 @@ echo $str;
 
 echo "\n\n---------------\n\n";
 
-// Using anonymous functions as a php callback.
+// Example 2
+// Using anonymous functions as a callback parameter in preg_replace_callback().
+$transform = function ($match) {
+  return ' ' . strtoupper($match[1]);
+};
+
+echo preg_replace_callback('~-([a-z])~', $transform, 'hello-world -think');
+// Outputs hello World.
+
+
+// Example 3
 echo preg_replace_callback('~-([a-z])~', function ($match) {
-  return strtoupper($match[1]);
+  return ' ' . strtoupper($match[1]);
 }, 'hello-world');
-// Outputs hello world.
+// Outputs hello World.
 
 echo "\n\n---------------\n\n";
 
+// Example 1
 // Using anonymous function as a variable.
 $greet = function($name)
 {
