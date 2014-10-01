@@ -7,3 +7,8 @@ http://www.phptherightway.com/
 h2. Things for later
 * Relfection API
 * traits
+
+
+Closures
+http://www.christophh.net/2011/10/26/closure-object-binding-in-php-54/
+
