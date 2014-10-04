@@ -5,6 +5,7 @@
  */
 
 echo "<pre>";
+
 // Can not change '5' within this anonymous function.
 $mult = function($x) {
   return $x * 5;
@@ -41,10 +42,13 @@ echo "\n\n---------------\n\n";
  * is inflexible.
  */
 
+
+
+
 function filter($condition, $numbers) {
   $filtered = array();
 
-  // Iterate through all array elements.
+  // Iterate through all array elements and check the condition.
   foreach ($numbers as $number) {
     if ($condition($number)) {
       $filtered[] = $number;
@@ -53,15 +57,16 @@ function filter($condition, $numbers) {
   return $filtered;
 }
 
-$not_random_numbers = array(34, 56, 1, 5, 67, 123, 4, 55);
+$random_numbers = array(34, 56, 1, 5, 67, 123, 4, 55);
 
+// Condition is true is number is a multiple of 2.
 $condition = function($x) {
-  return ($x > 100) ? TRUE : FALSE;
+  return ($x % 2 == 0) ? TRUE : FALSE;
 };
 
-$greater_than_100 = filter($condition, $not_random_numbers);
+$multiples_of_2 = filter($condition, $random_numbers);
 
-print_r($greater_than_100);
+print_r($multiples_of_2);
 
 echo "\n\n---------------\n\n";
 
@@ -73,7 +78,7 @@ echo "\n\n---------------\n\n";
 function filter2($condition, $numbers) {
   $filtered = array();
 
-  // Iterate through all array elements.
+  // Iterate through all array elements and check the condition.
   foreach ($numbers as $number) {
     if ($condition($number)) {
       $filtered[] = $number;
@@ -82,19 +87,19 @@ function filter2($condition, $numbers) {
   return $filtered;
 }
 
-function createFilter($lower_bound) {
-  return function ($x) use ($lower_bound) {
-    return ($x > $lower_bound) ? TRUE : FALSE;
+function createFilter($factor) {
+  return function ($x) use ($factor) {
+    return ($$x % $factor == 0) ? TRUE : FALSE;
   };
 }
 
-$greater_than_100 = createFilter(100);
-$greater_than_400 = createFilter(400);
+$multiples_of_2 = createFilter(2);
+$multiples_of_3 = createFilter(3);
 
-$not_random_numbers = array(42, 34, 56, 1, 5, 67, 123, 4, 55, 467, 555);
+$random_numbers = array(34, 56, 1, 5, 67, 123, 4, 55, 42);
 
-print_r(filter2($greater_than_100, $not_random_numbers));
-print_r(filter2($greater_than_400, $not_random_numbers));
+print_r(filter2($multiples_of_2, $random_numbers));
+print_r(filter2($multiples_of_3, $random_numbers));
 
 echo "\n\n---------------\n\n";
 
