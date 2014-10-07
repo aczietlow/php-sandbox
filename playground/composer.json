@@ -1,0 +1,12 @@
+{
+    "name": "aczietlow/oop",
+    "authors": [
+        {
+            "name": "chris.zietlow",
+            "email": "aczietlow@gmail.com"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "1.11.*@dev"
+    }
+}
