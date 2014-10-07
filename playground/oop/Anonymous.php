@@ -1,4 +1,6 @@
 <?php
+require '../vendor/autoload.php';
+
 echo "<pre>";
 
 /*
@@ -120,14 +122,14 @@ $output = '
     <li>array array_uintersect_uassoc ( array $array1 , array $array2 [, array $... ], callable $value_compare_func , callable $key_compare_func )</li>
     <li>array array_uintersect ( array $array1 , array $array2 [, array $... ], callable $value_compare_func )</li>
     <li>bool array_walk_recursive ( array &$array , callable $callback [, mixed $userdata = NULL ] )</li>
-    <li></li>
-
 </ul>
 ';
 
+print $output;
+
 echo "\n\n---------------\n\n";
 
-/*
+
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
@@ -137,8 +139,7 @@ $logClosure = function() {
   return $log;
 };
 
-//logger will not be initialized until this point
+//logger will not be initialized until this point.
 $logger = $logClosure();
-*/
 
-print $output;
+print PHP_EOL;
