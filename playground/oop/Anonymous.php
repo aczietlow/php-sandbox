@@ -125,4 +125,19 @@ $output = '
 </ul>
 ';
 
+echo "\n\n---------------\n\n";
+/*
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+$logClosure = function() {
+  $log = new Logger('event');
+  $log->pushHandler(new StreamHandler("logfile.log", Logger::DEBUG));
+  return $log;
+};
+
+//logger will not be initialized until this point
+$logger = $logClosure();
+*/
+
 print $output;

@@ -98,13 +98,13 @@ $multiples3 = filterByMultiples(3);
 
 $random_numbers = array(34, 56, 1, 5, 67, 123, 4, 55, 42);
 
-print_r(filter2($multiples_of_2, $random_numbers));
-print_r(filter2($multiples_of_3, $random_numbers));
+print_r(filter2($multiples2, $random_numbers));
+print_r(filter2($multiples3, $random_numbers));
 
 echo "\n\n---------------\n\n";
 
 // Debug information about the closure object.
-echo ReflectionFunction::export($greater_than_100);
+echo ReflectionFunction::export($multiples3);
 
 echo "\n\n---------------\n\n";
 
@@ -138,5 +138,30 @@ $closure();
 // The global count has increased.
 // Returns 1.
 echo $i . "\n";
+
+echo "\n\n---------------\n\n";
+
+/*
+ * Using closures we can access private variables in classes.
+ *
+ * Closures are objects and contain a bind and bindTo method. By using this
+ * feature closures can extend classes without modifying the class.
+ */
+class SimpleClass {
+  private $privateData = 42;
+}
+
+$simple_closure = function() {
+  return $this->privateData;
+};
+
+$result_closure = Closure::bind($simple_closure, new SimpleClass(), 'SimpleClass');
+
+echo $result_closure();
+
+echo "\n\n---------------\n\n";
+
+
+
 
 echo "</pre>";
