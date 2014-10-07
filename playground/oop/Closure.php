@@ -147,7 +147,7 @@ echo "\n\n---------------\n\n";
  * Closures are objects and contain a bind and bindTo method. By using this
  * feature closures can extend classes without modifying the class.
  */
-class SimpleClass {
+class SimpleClass2 {
   private $privateData = 42;
 }
 
