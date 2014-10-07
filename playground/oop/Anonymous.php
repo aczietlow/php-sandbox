@@ -139,7 +139,7 @@ $logClosure = function() {
   return $log;
 };
 
-//logger will not be initialized until this point.
+// Logger will not be initialized until this point.
 $logger = $logClosure();
 
 print PHP_EOL;
