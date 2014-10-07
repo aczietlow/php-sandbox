@@ -64,7 +64,7 @@ $condition = function($x) {
   return ($x % 2 == 0) ? TRUE : FALSE;
 };
 
-$multiples_of_2 = filter($condition, $random_numbers);
+$multiples = filter($condition, $random_numbers);
 
 print_r($multiples_of_2);
 
@@ -87,14 +87,14 @@ function filter2($condition, $numbers) {
   return $filtered;
 }
 
-function createFilter($factor) {
+function filterByMultiples($factor) {
   return function ($x) use ($factor) {
-    return ($$x % $factor == 0) ? TRUE : FALSE;
+    return ($x % $factor == 0) ? TRUE : FALSE;
   };
 }
 
-$multiples_of_2 = createFilter(2);
-$multiples_of_3 = createFilter(3);
+$multiples2 = filterByMultiples(2);
+$multiples3 = filterByMultiples(3);
 
 $random_numbers = array(34, 56, 1, 5, 67, 123, 4, 55, 42);
 
