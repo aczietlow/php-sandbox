@@ -1,8 +1,8 @@
 <?php
 
 $transform = function ($match) {
-  return ' ' . strtoupper($match[1]);
+  return '_' . strtoupper($match[1]);
 };
 
-print preg_replace_callback('~-([a-z])~', $transform, 'hello-world');
-// Outputs hello World.
+// Outputs file_Name.
+print preg_replace_callback('~-([a-z])~', $transform, 'file-name');
