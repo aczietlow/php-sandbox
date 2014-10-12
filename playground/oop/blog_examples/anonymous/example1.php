@@ -1,9 +1,9 @@
 <?php
 
 // Using anonymous function as a variable.
-$greet = function($name)
+$spinalTap = function($number)
 {
-  printf("It goes to %s.", $name);
+  printf("It goes to %s.", $number);
 };
 // Outputs Hello World.
-$greet('eleven');
+$spinalTap('eleven');
