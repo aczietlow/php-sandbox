@@ -5,4 +5,4 @@ $transform = function ($match) {
 };
 
 // Outputs file_Name.
-print preg_replace_callback('~-([a-z])~', $transform, 'file-name');
+print preg_replace_callback('.-([a-z]).', $transform, 'file-name');
