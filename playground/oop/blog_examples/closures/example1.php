@@ -13,8 +13,6 @@ class MathsAPI {
   }
 }
 
-
-
 class MyClass {
   public static function doStuff() {
     $math = new MathsAPI();
