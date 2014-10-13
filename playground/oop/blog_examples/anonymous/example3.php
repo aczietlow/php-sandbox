@@ -1,6 +1,6 @@
 <?php
 
-echo preg_replace_callback('~-([a-z])~', function ($match) {
-  return ' ' . strtoupper($match[1]);
-}, 'hello-world');
-// Outputs hello World.
+print preg_replace_callback('.-([a-z]).', function ($match) {
+  return '_' . strtoupper($match[1]);
+}, 'file-name');
+// Outputs file_Name.
