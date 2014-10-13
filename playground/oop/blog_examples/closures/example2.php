@@ -1,8 +1,7 @@
 <?php
 
-function filter($condition, $numbers) {
+function filter(callable $condition, $numbers) {
   $filtered = array();
-
 
   // Iterate through all array elements and check the condition.
   foreach ($numbers as $number) {
