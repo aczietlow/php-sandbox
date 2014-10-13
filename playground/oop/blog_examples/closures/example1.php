@@ -1,7 +1,7 @@
 <?php
 
 class MathsAPI {
-  public function filter($condition, $numbers) {
+  public function filter(callable $condition, $numbers) {
     $filtered = array();
     // Iterate through all array elements and check the condition.
     foreach ($numbers as $number) {
