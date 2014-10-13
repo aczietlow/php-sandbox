@@ -13,10 +13,12 @@ function filter($condition, $numbers) {
   return $filtered;
 }
 $random_numbers = array(34, 56, 1, 5, 67, 123, 4, 55);
+
 // Condition is true is number is a multiple of 2.
 $condition = function($x) {
   return ($x % 2 == 0) ? TRUE : FALSE;
 };
+
 $multiples = filter($condition, $random_numbers);
 
 // Outputs Array ( [0] => 34 [1] => 56 [2] => 4 ).
