@@ -18,4 +18,6 @@ $condition = function($x) {
   return ($x % 2 == 0) ? TRUE : FALSE;
 };
 $multiples = filter($condition, $random_numbers);
+
+// Outputs Array ( [0] => 34 [1] => 56 [2] => 4 ).
 print_r($multiples);
